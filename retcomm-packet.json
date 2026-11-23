@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "asterix-mega-madness-psx",
+  "name": "Asterix - Mega Madness",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "asterix-mega-madness-recomp",
+  "rom_identity": {
+    "crc32": [
+      "37b60938"
+    ],
+    "md5": [
+      "186d7062d15c90edd97e1aefe5a6d18b"
+    ],
+    "sha1": [
+      "a4f00a9a8d139d62f9c15ad19c735097dd0eab34"
+    ],
+    "disc_serials": [
+      "SLES-03324"
+    ],
+    "sizes": [
+      614993904
+    ],
+    "filenames": [
+      "Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).cue",
+      "Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "47e11a6433110fa7f73c2294ed6add9f85fcc539f19817eecc6131cc3a066ba9"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/asterix-mega-madness-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "asterix-mega-madness-*-windows-x64.zip",
+      "linux-x64": "asterix-mega-madness-*-linux-x64.zip",
+      "macos-arm64": "asterix-mega-madness-*-macos-arm64.zip",
+      "macos-x64": "asterix-mega-madness-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "asterix_mega_madness.exe",
+    "linux": "asterix_mega_madness",
+    "macos": "asterix_mega_madness"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/asterix-mega-madness-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

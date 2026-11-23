@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Asterix - Mega Madness"
+id = "SLES-03324"
+players = 1
+exe = "disc/SLES_033.24"
+disc = "disc/Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).cue"
+discs = ["disc/Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).cue"]
+disc_serials = ["SLES-03324"]
+load_address = "0x80010000"
+entry_pc = "0x80045FF8"
+text_size = "0x0005B000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).bin"
+cue_name = "Asterix - Mega Madness (Europe) (En,Fr,De,Es,It,Nl).cue"
+boot_exe = "SLES_033.24"
+known_sizes = [614993904]
+known_md5 = [
+  "186d7062d15c90edd97e1aefe5a6d18b",
+]
+known_sha1 = [
+  "a4f00a9a8d139d62f9c15ad19c735097dd0eab34",
+]
+known_crc32 = [
+  "37b60938",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Asterix - Mega Madness Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "47e11a6433110fa7f73c2294ed6add9f85fcc539f19817eecc6131cc3a066ba9"
